@@ -230,7 +230,7 @@ class TwoLayerNet(object):
     ###########################################################################
     scores = np.maximum(0, X.dot(W1) + b1).dot(W2) + b2
     scores = scores - np.max(scores, axis=-1, keepdims=True)
-    probs = np.exp(scores)
+    probs = np.exp(scores) 
     probs /= np.sum(probs, axis = -1, keepdims=True)
     y_ = np.argsort(probs, axis=-1)
     y_pred = y_[:,-1]
